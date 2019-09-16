@@ -66,6 +66,7 @@ gem 'bootstrap', '4.0.0.alpha6'
 gem 'will_paginate', '~> 3.1.1'
 gem 'bootstrap-will_paginate', '~> 1.0'
 gem 'simple_form'
+gem 'font-awesome-rails'
 
 
 source 'https://rails-assets.org' do
