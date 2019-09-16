@@ -5,3 +5,9 @@
     <p><%= place.description %></p><br>
   </div>
 <% end %>
+
+<div class="paginate-links">
+  <div class="paginate-links-child">
+    <%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+  </div>
+</div>
