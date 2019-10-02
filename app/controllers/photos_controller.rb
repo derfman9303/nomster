@@ -1,10 +1,25 @@
 class PhotosController < ApplicationController
-before_action :authenticate_user!
+before_action :authenticate_user!, only: [:new, :create, :edit]
+
+  def new
+    @photo = Photo.new
+  end
 
   def create 
     @place = Place.find(params[:place_id])
-    @place.photos.create(photo_params.merge(user: current_user))
-    redirect_to place_path(@place)
+    @photo = @place.photos.create(photo_params)
+    if @photo.valid?
+      redirect_to root_path
+    else
+      render plain: 'Not Valid', status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  #  @place = Place.find(params[:id])
+  #  if @place.user != current_user
+  #    return render plain: 'Not Allowed', status: :forbidden
+    end
   end
 
   private
