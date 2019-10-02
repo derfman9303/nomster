@@ -3,7 +3,7 @@
     <h1><%= link_to place.name, place_path(place) %></h1><br>
     <i><%= place.address %></i><br><br>
     <p><%= place.description %></p><br>
-    <div><%= place.photos.last %></div>
+    <div><%= image_tag place.photos.last.picture.url, class: "img-fluid" %></div><br>
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
     <% end %>

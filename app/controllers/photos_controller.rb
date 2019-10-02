@@ -11,14 +11,8 @@ before_action :authenticate_user!, only: [:new, :create, :edit]
     if @photo.valid?
       redirect_to root_path
     else
-      render plain: 'Not Valid', status: :unprocessable_entity
+      return render plain: "Not Valid", status: :unprocessable_entity
     end
-  end
-
-  def edit
-  #  @place = Place.find(params[:id])
-  #  if @place.user != current_user
-  #    return render plain: 'Not Allowed', status: :forbidden
   end
 
   private
