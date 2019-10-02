@@ -19,7 +19,6 @@ before_action :authenticate_user!, only: [:new, :create, :edit]
   #  @place = Place.find(params[:id])
   #  if @place.user != current_user
   #    return render plain: 'Not Allowed', status: :forbidden
-    end
   end
 
   private
