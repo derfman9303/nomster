@@ -6,19 +6,19 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <%= image_tag 'airplane.jpg', class: 'd-block img-fluid' %>
+      <%= image_tag 'birds3.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
         <h3>Airplane</h3>
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag 'korea.jpg', class: 'd-block img-fluid' %>
+      <%= image_tag 'chinese3.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
         <h3>Korea</h3>
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag 'korea2.jpg', class: 'd-block img-fluid' %>
+      <%= image_tag 'fancy.jpg', class: 'd-block img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
         <h3>Korea again</h3>
       </div>
@@ -33,7 +33,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
+<br>
+<br>
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
     <h1><%= link_to place.name, place_path(place) %></h1><br>
