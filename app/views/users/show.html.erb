@@ -1,9 +1,9 @@
 <div class="booyah-box">
   <div class="row">
-    <div class="col-4">
-      <%= image_tag 'user4hd.png', class: 'profile-img' %>
-    </div>
-    <div class="col-8 user-info">
+    <div class="col-sm-4">
+      <%= image_tag 'user4hd.png', class: 'profile-img img-fluid' %>
+     </div> 
+    <div class="col-sm-8 user-info">
       <p><%= @user.email %></p>
       <hr>
       <p>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></p>

@@ -18,8 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 body {
   background: image_url('regal.png');
-  /* font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif; */
-  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: 'poppinslight';
 }
 .navbar, .navbar-inverse {
   background: image_url('black-Linen.png');
@@ -90,8 +89,14 @@ blockquote p {
 .profile-img {
   max-width: 165px;
 }
-@media only screen and (max-width: 780px) {
-  .user-info > * {
-    font-size: 5;
+@media only screen and (max-width: 315px) {
+  .user-info > p {
+    font-size: 75%;
   }
 }
+@media only screen and (min-width: 991px) {
+  .nav-item {
+    display: inline;
+  }
+}
+
