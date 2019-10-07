@@ -39,6 +39,7 @@
       </button>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
     <% end %>
+    <br><br>
     <% @place.photos.each do |photo| %>
       <%= image_tag photo.picture.url.to_s, class: "img-fluid" %>
       <p><%= photo.caption %></p>
