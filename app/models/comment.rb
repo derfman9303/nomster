@@ -2,6 +2,8 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :place
   after_create :send_comment_email
+  validates :message, presence: true
+  validates :rating, presence: true
 
   RATINGS = {
     'one star': '1_star',

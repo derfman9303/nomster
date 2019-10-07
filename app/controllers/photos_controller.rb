@@ -9,9 +9,9 @@ before_action :authenticate_user!, only: [:new, :create, :edit]
     @place = Place.find(params[:place_id])
     @photo = @place.photos.create(photo_params)
     if @photo.valid?
-      redirect_to root_path
+      redirect_to place_path(@place)
     else
-      return render plain: "Not Valid", status: :unprocessable_entity
+      render plain: 'The information you entered is invalid', status: :unprocessable_entity
     end
   end
 

@@ -1,8 +1,11 @@
 <div class="booyah-box col-10 offset-1">
   <h1><%= @place.name %></h1>
   <i><%= @place.address %></i>
-  <br><br>
+  <hr>
   <p><%= @place.description %></p>
+  <hr>
+  <p><%= @place.user.email %></p>
+  <br>
   <% if @place.latitude.present? && @place.longitude.present? %>
     <script>
 
@@ -80,11 +83,11 @@
         <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
           <%= f.input :caption %>
           <%= f.input :picture %>
+          <div class="modal-footer">
           <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

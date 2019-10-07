@@ -3,8 +3,12 @@ before_action :authenticate_user!
 
   def create
     @place = Place.find(params[:place_id])
-    @place.comments.create(comment_params.merge(user: current_user))
-    redirect_to place_path(@place)
+    comment = @place.comments.create(comment_params.merge(user: current_user))
+    if comment.valid?
+      redirect_to place_path(@place)
+    else
+      render plain: 'The information you entered is invalid', status: :unprocessable_entity
+    end
   end
 
   private
