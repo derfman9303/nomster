@@ -18,7 +18,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 body {
   background: image_url('regal.png');
-  font-family: 'poppinslight', 'PoppinsLight';
+  font-family:/* 'poppinslight',*/ 'Poppins';
+  overflow-x: hidden;
 }
 .navbar, .navbar-inverse {
   background: image_url('black-Linen.png');
@@ -29,6 +30,7 @@ body {
   color: #d4d4d4;
   font-family: 'cinzel_decorativeregular';
   font-size: 26px;
+  font-weight: bold;
 }
 .paginate-links {
   text-align: center;
