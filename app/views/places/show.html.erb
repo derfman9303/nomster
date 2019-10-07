@@ -107,6 +107,7 @@
         <% if comment.humanized_rating.present? %>
           <b><%= comment.humanized_rating %></b>
         <% end %>
+        <br>
         <%= comment.message %>
         <small><%= comment.user.email %></small>
       </blockquote>
