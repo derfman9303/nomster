@@ -35,34 +35,40 @@
 </div>
 <br>
 <br>
-<% @places.each do |place| %>
-  <div class="booyah-box col-10 offset-1">
-    <h1><%= link_to place.name, place_path(place) %></h1><br>
-    <i><%= place.address %></i><br><br>
-    <p><%= place.description %></p><br>
-    <% if place.photos.present? %>
-      <div><%= image_tag place.photos.last.picture.url.to_s, class: "img-fluid" %></div><br>
-    <% end %>
-    <% if place.user.present? %>
-      <small><%= place.user.email %></small>
-    <% end %>
-    <% if place.comments.present? %>
-      <div class="col-12">
-        <blockquote>
-          <% if place.comments.last.humanized_rating.present? %>
-            <b><%= place.comments.last.humanized_rating %></b>
+<div class="container">
+  <div class="row">
+    <% @places.each do |place| %>
+      <div class="col-12 col-lg-6">
+        <div class="booyah-box">
+          <h1><%= link_to place.name, place_path(place) %></h1><br>
+          <i><%= place.address %></i><br><br>
+          <p><%= place.description %></p><br>
+          <% if place.photos.present? %>
+            <div><%= image_tag place.photos.last.picture.url.to_s, class: "img-fluid" %></div><br>
           <% end %>
-          <br>
-          <%= place.comments.last.message %>
-          <small><%= place.comments.last.user.email %></small>
-        </blockquote>
+          <% if place.user.present? %>
+            <small><%= place.user.email %></small>
+          <% end %>
+          <% if place.comments.present? %>
+            <div class="col-12">
+              <blockquote>
+                <% if place.comments.last.humanized_rating.present? %>
+                  <b><%= place.comments.last.humanized_rating %></b>
+                <% end %>
+                <br>
+                <%= place.comments.last.message %>
+                <small><%= place.comments.last.user.email %></small>
+              </blockquote>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
-<% end %>
+</div>
 
 <div class="paginate-links">
   <div class="paginate-links-child">
-    <%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+    <%= will_paginate(@places, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
   </div>
 </div>

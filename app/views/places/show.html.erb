@@ -3,84 +3,89 @@
 <h1 class="text-center"><%= @place.name %></h1>
 <hr class="style1">
 <br>
-<div class="row">  
-  <div class="booyah-box col-sm-10 col-lg-5 offset-sm-1">
-    <i><%= @place.address %></i>
-    <hr>
-    <p><%= @place.description %></p>
-    <hr>
-    <p><%= @place.user.email %></p>
-    <br>
-    <% if @place.latitude.present? && @place.longitude.present? %>
-      <script>
+<div id="show-container" class="container">
+  <div class="row">  
+    <div class="booyah-box col-sm-10 col-lg-5 offset-sm-1">
+      <i><%= @place.address %></i>
+      <hr>
+      <p><%= @place.description %></p>
+      <hr>
+      <p><%= @place.user.email %></p>
+      <br>
+      <% if @place.latitude.present? && @place.longitude.present? %>
+        <script>
 
-        function initMap() {
-          var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+          function initMap() {
+            var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: myLatLng
-          });
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 12,
+              center: myLatLng
+            });
 
-          var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Hello World!'
-          });
-        }
-      </script>
-    <% end %>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-cbeggfx9doD9g3mk-NcHT3Z7z88BFg&callback=initMap">
-      </script>
-    <div id="map"></div>
-    <br>
-    <div>
-      <% if current_user && current_user == @place.user %>
-        <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
-        <!-- Button trigger image modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
-          Add an Image
-        </button>
-        <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+            var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'Hello World!'
+            });
+          }
+        </script>
       <% end %>
-      <br><br>
-      <a id="dropdown-button" class="button default ok btn btn-outline-info btn-sm" href="#img-dropdown" data-toggle="collapse" aria-expanded="false">
-        View Images
-      </a>
-      <div id="img-dropdown" class="collapse">
-        <% @place.photos.each do |photo| %>
-          <%= image_tag photo.picture.url.to_s, class: "img-fluid" %>
-          <p><%= photo.caption %></p>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-cbeggfx9doD9g3mk-NcHT3Z7z88BFg&callback=initMap">
+        </script>
+      <div id="map"></div>
+      <br>
+      <div>
+        <% if current_user && current_user == @place.user %>
+          <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
+          <!-- Button trigger image modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+            Add an Image
+          </button>
+          <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+        <% end %>
+        <br><br>
+      </div>
+    </div>
+    <div class="col-10 offset-1 col-lg-5 offset-lg-0">
+      <br>
+      <div>
+        <h1 class="float-left">Comments</h1>
+        <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+            Add a comment
+        </button>
+      </div>
+      <div class="clear"></div>
+      <br>
+      <div id="comments-box">
+        <% @place.comments.each do |comment| %>
+          <blockquote>
+            <% if comment.humanized_rating.present? %>
+              <b><%= comment.humanized_rating %></b>
+            <% end %>
+            <br>
+            <%= comment.message %>
+            <br>
+            <small><%= comment.user.email %></small>
+          </blockquote>
         <% end %>
       </div>
     </div>
   </div>
-  <div class="col-10 offset-1 col-lg-5 offset-lg-0">
-    <br>
-    <div>
-      <h1 class="float-left">Comments</h1>
-      <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
-          Add a comment
-      </button>
-    </div>
-    <div class="clear"></div>
-    <!--<div class="row">-->
-      <% @place.comments.each do |comment| %>
-        <!--<div>-->
-        <blockquote>
-          <% if comment.humanized_rating.present? %>
-            <b><%= comment.humanized_rating %></b>
-          <% end %>
-          <br>
-          <%= comment.message %>
-          <br>
-          <small><%= comment.user.email %></small>
-        </blockquote>
-        <!--</div>-->
-      <% end %>
-    <!--</div>-->
-  </div>
+</div>
+<br>
+<div class="row">
+  <a id="dropdown-button" class="button default ok btn btn-outline-info btn-sm offset-5" href="#img-dropdown" data-toggle="collapse" aria-expanded="false">
+    View Images
+  </a>
+</div>
+<br>
+<div id="img-dropdown" class="collapse booyah-box col-10 offset-1">
+<% @place.photos.each do |photo| %>
+  <%= image_tag photo.picture.url.to_s, class: "img-fluid" %>
+  <p><%= photo.caption %></p>
+<% end %>
 </div>
 <div class="clear"></div>
 
@@ -107,8 +112,6 @@
     </div>
   </div>
 </div>
-
-
 <!-- Modal -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -132,5 +135,6 @@
     </div>
   </div>
 </div>
-
 <br>
+
+
