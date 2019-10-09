@@ -111,7 +111,7 @@ width: 200px;
 height: 1px;
 } 
 #comments-box {
-  height: 633px;
+  max-height: 633px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
