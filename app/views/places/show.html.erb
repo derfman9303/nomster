@@ -75,11 +75,13 @@
   </div>
 </div>
 <br>
-<div class="row">
-  <a id="dropdown-button" class="button default ok btn btn-outline-info btn-sm offset-5" href="#img-dropdown" data-toggle="collapse" aria-expanded="false">
-    View Images
-  </a>
-</div>
+<% if @place.photos.present? %>
+  <div class="row">
+    <a id="dropdown-button" class="button default ok btn btn-outline-info offset-5" href="#img-dropdown" data-toggle="collapse" aria-expanded="false">
+      View Images
+    </a>
+  </div>
+<% end %>
 <br>
 <div id="img-dropdown" class="collapse booyah-box col-10 offset-1">
 <% @place.photos.each do |photo| %>
