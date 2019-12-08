@@ -1,12 +1,12 @@
 # Documentation
 
-## Why this app exists:
+## What this app is:
 
-This app was built for the purpose of gaining experience creating apps using a test-driven development approach. It emulates a popular social media website and shares much of the core functionality.
+A Yelp clone that integrates with the Google Maps API and includes features like user comments, star ratings, image uploading, and user authentication.
 
-You may visit the deployed version [here](https://grammable-frederic-hodges.herokuapp.com/).
+You may visit the deployed version [here](https://nomster-frederic-hodges.herokuapp.com/).
 
-![Grammable app screenshot](app/assets/images/grammable.PNG "Grammable app screenshot")
+![Grammable app screenshot](app/assets/images/nomster.PNG "Nomster app screenshot")
 ***
 # Setup
 
