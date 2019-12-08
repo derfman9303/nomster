@@ -23,7 +23,7 @@ You may visit the deployed version [here](https://nomster-frederic-hodges.heroku
        
         git@github.com:derfman9303/nomster.git
         
-2. **On the command line, navigate to the grammable repository**
+2. **On the command line, navigate to the Nomster directory**
         
         cd nomster
 
