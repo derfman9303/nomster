@@ -21,11 +21,11 @@ You may visit the deployed version [here](https://nomster-frederic-hodges.heroku
   
 1. **Clone repo:**
        
-        git@github.com:derfman9303/grammable.git
+        git@github.com:derfman9303/nomster.git
         
 2. **On the command line, navigate to the grammable repository**
         
-        cd grammable
+        cd nomster
 
 3. **Create the database**
         
@@ -44,11 +44,6 @@ You may visit the deployed version [here](https://nomster-frederic-hodges.heroku
 
 You may now visit your app at http://localhost:3030
 
-## Running test suite:
-
-This app uses the Rspec test suite, if you need to use it you may do so by editing the spec files in /grammable/spec and running the following command:
-
-        bundle exec rspec
 
 ***
 # Deployment
@@ -66,3 +61,9 @@ If you would like, you may push your app up to Heroku by running the following c
         heroku create
         
         git push heroku master
+ 
+ ***
+# Notes
+This app integrates with Google maps API. For more information, visit the official documentation
+
+
