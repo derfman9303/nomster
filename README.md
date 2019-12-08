@@ -6,7 +6,8 @@ A Yelp clone that integrates with the Google Maps API and includes features like
 
 You may visit the deployed version [here](https://nomster-frederic-hodges.herokuapp.com/).
 
-![Grammable app screenshot](app/assets/images/nomster.PNG "Nomster app screenshot")
+![Nomster app screenshot](app/assets/images/nomster.PNG "Nomster app screenshot")
+![Nomster app screenshot](app/assets/images/nomster2.PNG "Nomster app screenshot")
 ***
 # Setup
 
