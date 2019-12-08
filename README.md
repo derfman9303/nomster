@@ -64,6 +64,6 @@ If you would like, you may push your app up to Heroku by running the following c
  
  ***
 # Notes
-This app integrates with Google maps API. For more information, visit the official documentation
+This app integrates with Google maps API. For more information, visit the [official documentation](https://developers.google.com/maps/documentation) "google maps api documentation")
 
 
