@@ -67,6 +67,6 @@ If you would like, you may push your app up to Heroku by running the following c
 # Notes
 This app integrates with Google maps API. For more information, visit the [official documentation.](https://developers.google.com/maps/documentation)
 
-If you only use this app locally, images can be saved to the database using the "carrierwave" gem. However, if you push your app to Heroku, you will run into errors using carrierwave to store images in the database. In this case, you will need to specify an AWS bucket for the "fog-aws" gem to use. For more information on how these gems work, visit their official documentation: [Carrierwave](https://github.com/carrierwaveuploader/carrierwave)  [Fog-AWS](https://github.com/fog/fog-aws)
+If you only use this app locally, images can be saved to the database using the "carrierwave" gem. However, if you push your app to Heroku, you will run into errors using carrierwave to store images in the database. In this case, you will need to specify an AWS bucket for the "fog-aws" gem to use. For more information on how these gems work, visit their official documentation: [Carrierwave](https://github.com/carrierwaveuploader/carrierwave) - [Fog-AWS](https://github.com/fog/fog-aws)
 
 
